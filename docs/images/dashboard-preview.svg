@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <style>
+      .bg { fill: #0F1117; }
+      .surface { fill: #181B22; stroke: #262B36; stroke-width: 1; }
+      .sidebar { fill: #13161D; stroke: #262B36; stroke-width: 1; }
+      .header { fill: #161920; stroke: #262B36; stroke-width: 1; }
+      .card { fill: #181B22; stroke: #262B36; stroke-width: 1; rx: 8; }
+      .inner-card { fill: #0F1117; stroke: #262B36; stroke-width: 1; rx: 6; }
+      .text-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 600; fill: #FFFFFF; }
+      .text-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; fill: #9CA3AF; }
+      .text-mono { font-family: "JetBrains Mono", Consolas, Menlo, monospace; font-size: 12px; fill: #93C5FD; }
+      .text-val { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 16px; font-weight: 700; fill: #F3F4F6; }
+      .badge-safe { fill: rgba(16, 185, 129, 0.15); stroke: #10B981; stroke-width: 1; rx: 4; }
+      .badge-high { fill: rgba(249, 115, 22, 0.15); stroke: #F97316; stroke-width: 1; rx: 4; }
+      .btn-blue { fill: #2563EB; rx: 4; }
+      .btn-orange { fill: #D97706; rx: 4; }
+      .btn-green { fill: #059669; rx: 4; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="680" rx="12" class="bg" />
+
+  <!-- Window Header Bar -->
+  <rect width="1200" height="42" rx="12" class="header" />
+  <circle cx="24" cy="21" r="6" fill="#EF4444" />
+  <circle cx="44" cy="21" r="6" fill="#F59E0B" />
+  <circle cx="64" cy="21" r="6" fill="#10B981" />
+  <text x="96" y="26" class="text-title" font-size="13">OpsCopilot - SRE 工业级智能运维副驾 (Linux Host: node01-prod | 127.0.0.1)</text>
+
+  <!-- Left Sidebar -->
+  <rect x="0" y="42" width="200" height="638" class="sidebar" />
+
+  <!-- Nav Item 1: Active -->
+  <rect x="12" y="60" width="176" height="38" rx="6" fill="#1E2638" stroke="#3B82F6" stroke-width="1" />
+  <circle cx="32" cy="79" r="4" fill="#60A5FA" />
+  <text x="46" y="84" class="text-title" fill="#60A5FA">系统健康大盘</text>
+
+  <!-- Nav Item 2 -->
+  <text x="46" y="126" class="text-body">智能诊断 (Copilot)</text>
+  <circle cx="32" cy="122" r="4" fill="#6B7280" />
+
+  <!-- Nav Item 3 -->
+  <text x="46" y="168" class="text-body">SRE 标准预案库</text>
+  <circle cx="32" cy="164" r="4" fill="#6B7280" />
+
+  <!-- Nav Item 4 -->
+  <text x="46" y="210" class="text-body">节点资产 (SSH)</text>
+  <circle cx="32" cy="206" r="4" fill="#6B7280" />
+
+  <!-- Sidebar Status Pill -->
+  <rect x="16" y="618" width="168" height="36" rx="6" class="inner-card" />
+  <circle cx="32" cy="636" r="4" fill="#10B981" />
+  <text x="44" y="640" class="text-body" font-size="11">探针守护: 运行中 (8080)</text>
+
+  <!-- Main Content Layout (Left: Metrics Grid, Right: Copilot Stream) -->
+
+  <!-- Left: Metric Cards Area (x: 216 -> 740, w: 524) -->
+
+  <!-- Top Overview Banner -->
+  <rect x="216" y="58" width="510" height="68" class="card" />
+  <text x="236" y="85" class="text-title">当前节点: node01-prod (Linux 6.8.0-amd64)</text>
+  <text x="236" y="108" class="text-body" font-size="12">1/5/15m 负载: 0.45 / 0.38 / 0.26 | 运行队列正常 | 僵尸进程: 0 | 异常服务: 0</text>
+  <rect x="636" y="76" width="76" height="26" class="btn-blue" />
+  <text x="648" y="93" font-family="sans-serif" font-size="11" fill="#FFFFFF">一键体检</text>
+
+  <!-- Metric Card: CPU & Load -->
+  <rect x="216" y="140" width="248" height="110" class="card" />
+  <text x="232" y="166" class="text-body">CPU 综合使用率</text>
+  <text x="232" y="196" class="text-val">18.5% <tspan font-size="12" fill="#10B981" font-weight="normal">平稳区间</tspan></text>
+  <text x="232" y="230" class="text-body" font-size="11">上下文切换: 820/s | 软中断占比: 1.2%</text>
+
+  <!-- Metric Card: Memory -->
+  <rect x="478" y="140" width="248" height="110" class="card" />
+  <text x="494" y="166" class="text-body">物理内存分布 (/proc/meminfo)</text>
+  <text x="494" y="196" class="text-val">7.8 GB <tspan font-size="13" fill="#6B7280" font-weight="normal">/ 16.0 GB (47%)</tspan></text>
+  <!-- Memory Progress bar -->
+  <rect x="494" y="212" width="216" height="6" rx="3" fill="#2C3240" />
+  <rect x="494" y="212" width="102" height="6" rx="3" fill="#3B82F6" />
+  <text x="494" y="236" class="text-body" font-size="11">Slab: 256MB | Dirty脏页: 32MB | 可用: 8.5GB</text>
+
+  <!-- Metric Card: Disk Partitions -->
+  <rect x="216" y="264" width="510" height="136" class="card" />
+  <text x="232" y="290" class="text-title">存储挂载点与 Inode 状态</text>
+  
+  <text x="232" y="316" class="text-mono" font-size="12" fill="#D1D5DB">/dev/nvme0n1p2  ->  / (根分区)</text>
+  <text x="630" y="316" class="text-body" font-size="11">42.5 GB / 100 GB (42%)</text>
+  <rect x="232" y="324" width="478" height="6" rx="3" fill="#2C3240" />
+  <rect x="232" y="324" width="200" height="6" rx="3" fill="#10B981" />
+
+  <text x="232" y="358" class="text-mono" font-size="12" fill="#D1D5DB">/dev/nvme0n1p3  ->  /data (业务数据盘)</text>
+  <text x="620" y="358" class="text-body" font-size="11">180.2 GB / 500 GB (36%)</text>
+  <rect x="232" y="366" width="478" height="6" rx="3" fill="#2C3240" />
+  <rect x="232" y="366" width="172" height="6" rx="3" fill="#10B981" />
+
+  <!-- Metric Card: Network TCP -->
+  <rect x="216" y="414" width="510" height="110" class="card" />
+  <text x="232" y="440" class="text-title">网络协议栈套接字分布 (ss -s)</text>
+  <text x="232" y="474" class="text-val" font-size="20">280 <tspan font-size="12" fill="#9CA3AF" font-weight="normal">ESTABLISHED</tspan></text>
+  <text x="390" y="474" class="text-val" font-size="20" fill="#F59E0B">52 <tspan font-size="12" fill="#9CA3AF" font-weight="normal">TIME_WAIT</tspan></text>
+  <text x="530" y="474" class="text-val" font-size="20" fill="#60A5FA">10 <tspan font-size="12" fill="#9CA3AF" font-weight="normal">CLOSE_WAIT</tspan></text>
+  <text x="232" y="506" class="text-body" font-size="11">监听端口: 80 (nginx), 443, 3306 (mysql), 6379 (redis), 22 (sshd)</text>
+
+  <!-- Quick Runbooks Launcher -->
+  <rect x="216" y="538" width="510" height="116" class="card" />
+  <text x="232" y="564" class="text-title">常用 SRE 排障预案快捷入口 (Runbooks)</text>
+  <rect x="232" y="578" width="148" height="60" class="inner-card" />
+  <text x="244" y="600" class="text-title" font-size="12">CPU 100% 突发排查</text>
+  <text x="244" y="622" class="text-body" font-size="10">区分计算/软中断/IO</text>
+
+  <rect x="392" y="578" width="148" height="60" class="inner-card" />
+  <text x="404" y="600" class="text-title" font-size="12">OOM Killer 追踪</text>
+  <text x="404" y="622" class="text-body" font-size="10">检索历史内核强杀记录</text>
+
+  <rect x="552" y="578" width="160" height="60" class="inner-card" />
+  <text x="564" y="600" class="text-title" font-size="12">TIME_WAIT 积压调优</text>
+  <text x="564" y="622" class="text-body" font-size="10">内核参数快速评估</text>
+
+  <!-- Right: Copilot Chat & Guardrail Stream (x: 742, w: 442) -->
+  <rect x="742" y="58" width="442" height="596" class="card" />
+  <text x="760" y="86" class="text-title">智能排障推导与安全风控 (OpsCopilot)</text>
+
+  <!-- Chat Bubble 1: User -->
+  <rect x="880" y="106" width="288" height="38" rx="6" fill="#2563EB" />
+  <text x="894" y="130" font-family="sans-serif" font-size="12" fill="#FFFFFF">排查 80 端口访问异常并检查防火墙</text>
+
+  <!-- Chat Bubble 2: Assistant Reply -->
+  <rect x="760" y="156" width="408" height="84" class="inner-card" />
+  <text x="774" y="178" class="text-body" font-size="12" fill="#E5E7EB">已结合主机底层探针完成多维分析：</text>
+  <text x="774" y="198" class="text-body" font-size="12">1. 80 端口已被 nginx (PID 1042) 正常监听。</text>
+  <text x="774" y="218" class="text-body" font-size="12">2. 检测到防火墙存在未确认策略，推荐执行只读探测。</text>
+
+  <!-- Suggested Command Card 1 (Safe) -->
+  <rect x="760" y="252" width="408" height="96" class="inner-card" stroke="#10B981" stroke-width="1" />
+  <!-- Safe Badge -->
+  <rect x="774" y="264" width="70" height="20" class="badge-safe" />
+  <text x="784" y="278" font-family="sans-serif" font-size="10" font-weight="bold" fill="#10B981">SAFE (分值: 0)</text>
+  <text x="856" y="278" class="text-body" font-size="11">只读操作，安全无害</text>
+  <text x="774" y="306" class="text-mono">ss -tulpn | grep :80</text>
+  <rect x="1084" y="314" width="68" height="24" class="btn-green" />
+  <text x="1096" y="330" font-family="sans-serif" font-size="11" fill="#FFFFFF">一键执行</text>
+
+  <!-- Suggested Command Card 2 (High Risk / Guardrail Blocked) -->
+  <rect x="760" y="360" width="408" height="152" class="inner-card" stroke="#F97316" stroke-width="1" />
+  <!-- High Risk Badge -->
+  <rect x="774" y="372" width="78" height="20" class="badge-high" />
+  <text x="784" y="386" font-family="sans-serif" font-size="10" font-weight="bold" fill="#F97316">HIGH (分值: 80)</text>
+  <text x="864" y="386" class="text-body" font-size="11" fill="#F97316">⚠️ 高危变更：清空防火墙策略</text>
+  <text x="774" y="414" class="text-mono" fill="#FCA5A5">iptables -F</text>
+  <text x="774" y="438" class="text-body" font-size="11">前置备份: iptables-save > /tmp/iptables.bak</text>
+  <text x="774" y="456" class="text-body" font-size="11" fill="#10B981">逆向回滚: iptables-restore &lt; /tmp/iptables.bak</text>
+  <rect x="1040" y="474" width="112" height="26" class="btn-orange" />
+  <text x="1052" y="491" font-family="sans-serif" font-size="11" fill="#FFFFFF">强制审批执行</text>
+
+  <!-- Terminal Output Bottom Tray inside Chat -->
+  <rect x="760" y="524" width="408" height="74" class="inner-card" />
+  <text x="774" y="546" class="text-mono" font-size="11" fill="#10B981">✓ [执行成功] 退出码: 0 (耗时: 12ms)</text>
+  <text x="774" y="566" class="text-mono" font-size="11" fill="#9CA3AF">tcp LISTEN 0 511 0.0.0.0:80 0.0.0.0:* users:(("nginx",pid=1042))</text>
+
+  <!-- Chat Input Bar -->
+  <rect x="760" y="608" width="340" height="34" class="inner-card" />
+  <text x="774" y="630" class="text-body" font-size="12">输入排障问题或待审计命令...</text>
+  <rect x="1110" y="608" width="58" height="34" class="btn-blue" />
+  <text x="1126" y="630" font-family="sans-serif" font-size="12" fill="#FFFFFF">发送</text>
+
+</svg>

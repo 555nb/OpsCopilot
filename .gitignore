@@ -1,0 +1,33 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+core/opscopilot.exe
+
+# Flutter & Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+ui/build/
+ui/.dart_tool/
+
+# IDE & OS
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+*.log
+
+# Private & Interview Notes (Local only)
+docs/INTERVIEW_GUIDE.md
+*INTERVIEW*
+*interview*
+
